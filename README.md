@@ -20,8 +20,8 @@ The Valorant Discord Bot is a general-purpose bot for Discord designed to provid
 
 ### APIs Used
 
--<a href="https://github.com/Henrik-3/unofficial-valorant-api"> **unofficial valorant api**</a> by <a href="https://github.com/Henrik-3">__Henrik 3__</a>: Provides data related to Valorant matches, player statistics, and other game information.
--<a href="https://valorant-api.com/"> **valorant-api.com**</a> by <a href="https://github.com/NotOfficer">__NotOfficer__</a>: Provides various Valorant in game assets including skins, icons, agents and many more
+- <a href="https://github.com/Henrik-3/unofficial-valorant-api"> **unofficial valorant api**</a> by <a href="https://github.com/Henrik-3">__Henrik 3__</a>: Provides data related to Valorant matches, player statistics, and other game information.
+- <a href="https://valorant-api.com/"> **valorant-api.com**</a> by <a href="https://github.com/NotOfficer">__NotOfficer__</a>: Provides various Valorant in game assets including skins, icons, agents and many more
 
 ## Roadmap/bot features
 
