@@ -6,6 +6,7 @@ This is a Discord bot built using the Discord.py library. The bot fetches and pr
 ## Table of Contents
 
 - [Overview](#overview)
+- [Roadmap and features](#Roadmap/bot-features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -41,7 +42,9 @@ The Valorant Discord Bot is a general-purpose bot for Discord designed to provid
 
 Before you begin, ensure you have met the following requirements:
 
-- Python 3.12.2 or higher is installed on your machine.
+- [Python 3.12.2](https://www.python.org/downloads/) or higher is installed on your machine.
+- [Visual Studio Code](https://code.visualstudio.com/download) is the recommended IDE for developing the discord bot
+- VScode Python and Pylance Extension for the python environment
 - [git](https://git-scm.com/downloads) and [Github Desktop](https://github.com/apps/desktop) for version control
 - [pip](https://pip.pypa.io/en/stable/installation/) is installed for package management.
 - Access to the discord bot application and token (Message harpoonz_ on discord)
