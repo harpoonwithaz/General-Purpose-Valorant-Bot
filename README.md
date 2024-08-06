@@ -52,22 +52,24 @@ Before you begin, ensure you have met the following requirements:
 
 ## Installation
 
-1. **Clone the Repository**
+To set up the project, follow these steps:
 
-   Clone this repository to your local machine using:
-
-   ```bash
-   git clone https://github.com/harpoonwithaz/General-Purpose-Valorant-Bot
-   cd General-Purpose-Valorant-Bot
-   ```
-
-2. **Install Dependencies**
-
-   Install the necessary Python packages using `pip`:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. **Fork the Repository:**
+To contribute to this project or modify it for your use, first fork the repository:
+- Navigate to the repository on GitHub.
+- Click on the `Fork` button at the top right of the page to create a copy of the repository under your own GitHub account.
+2. **Clone the repository:** 
+```bash
+git clone https://github.com/your_username/valorant-prediction.git
+```
+3. **Navigate to the project directory:**
+```bash
+cd valorant-prediction
+```
+4. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
 ## Configuration
 
