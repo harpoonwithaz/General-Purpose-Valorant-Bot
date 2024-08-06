@@ -30,3 +30,6 @@ def get_detailed_account_details(region: str, puuid: str):
     data, error_message = obtain_data.obtain_api_data(url)
 
     return data, error_message
+def get_Ranked_Icon(tier)
+    #this pulls the ranked icon's from the API URL
+    url ={}https://valorant-api.com/v1/competitivetiers
