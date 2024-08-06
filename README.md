@@ -60,11 +60,11 @@ To contribute to this project or modify it for your use, first fork the reposito
 - Click on the `Fork` button at the top right of the page to create a copy of the repository under your own GitHub account.
 2. **Clone the repository:** 
 ```bash
-git clone https://github.com/your_username/valorant-prediction.git
+git clone https://github.com/your_username/General-Purpose-Valorant-Bot.git
 ```
 3. **Navigate to the project directory:**
 ```bash
-cd valorant-prediction
+cd General-Purpose-Valorant-Bot
 ```
 4. **Install dependencies:**
 ```bash
