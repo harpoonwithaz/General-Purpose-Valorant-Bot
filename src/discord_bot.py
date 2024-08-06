@@ -56,4 +56,5 @@ async def embed(interaction: discord.Interaction, username : str, tagline : str)
 
     await interaction.response.send_message(embed=embed)
 
+# Runs bot with token from .env file
 bot.run(bot_token)
