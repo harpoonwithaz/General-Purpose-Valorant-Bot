@@ -4,6 +4,9 @@ data/
 # Ignore API Key
 .env
 
+# Ignores personal workspace settigns
+.vscode
+
 # Ignore Python cache and virtual environment directories
 __pycache__/
 *.py[cod]
