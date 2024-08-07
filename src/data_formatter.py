@@ -12,6 +12,21 @@ def get_player_info(name: str, tag: str) -> dict:
         
         # Checks if nothing was returned from the API
         if detailed_data != None:
+            # Gets players ranked stats and stores in variable
+            ranked_stats = detailed_data['data']['by_season']
+
+            # Variable to store the total wins
+            total_wins = 0
+            total_games = 0
+
+            # Iterate over the outer dictionary
+            for outer_key, inner_dict in ranked_stats.items():
+                # Check if 'error' is not a key in the inner dictionary
+                if 'error' not in inner_dict:
+                    # Add the wins to the total
+                    total_wins += int(inner_dict.get('wins', 0))
+                    total_games += int(inner_dict.get('number_of_games', 0))
+
             # Organizes JSON data from API into dictionary
             player_data = {
                 'username': detailed_data['data']['name'],
@@ -23,10 +38,20 @@ def get_player_info(name: str, tag: str) -> dict:
                 'banner_large': basic_data['data']['card']['large'],
                 'banner_wide': basic_data['data']['card']['wide'],
                 'current_rank': detailed_data['data']['current_data']['currenttierpatched'],
-                'current_rank_tier': detailed_data['data']['current_data']['currenttierpatched']
+                'current_rank_tier': detailed_data['data']['current_data']['currenttier'],
+                'current_rank_icons': detailed_data['data']['current_data']['images'],
+                'all_time_ranked_wins': total_wins,
+                'all_time_ranked_games': total_games,
+                'all_time_ranked_loses': total_games - total_wins,
+                'all_time_winrate': (total_wins // total_games) * 100,
+                'peak_rank': detailed_data['data']['highest_rank']['patched_tier'],
+                'peak_rank_tier': detailed_data['data']['highest_rank']['tier'],
             }
+            return player_data
     else:
-        print('Error: ', error_message  )
+        print('Error:', error_message)
     
 # This is a comment
-get_player_info('H00DBYAIR', 'BMWM5')
+data = get_player_info('BESTVALORANTNERD', 'SHELL')
+
+print(data['current_rank_icons']['small'])

@@ -2,7 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 
-def obtain_api_data(url : str):
+def obtain_api_data(url: str):
     '''
     Returns
     - Json data if the request was successful
@@ -14,7 +14,7 @@ def obtain_api_data(url : str):
     # Access the API key
     api_key = os.getenv('API_KEY')
 
-    # Set up the headers, including the authorization header with your API key
+    # Set up the headers, including the authorization header with the API key
     headers = {
         "accept": "application/json",
         "Authorization": str(api_key)
