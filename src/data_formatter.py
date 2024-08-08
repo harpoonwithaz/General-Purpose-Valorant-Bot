@@ -3,12 +3,33 @@ from api_modules import valorant_api
 
 def get_player_info(name: str, tag: str) -> dict:
     # Makes request to API and returns json data and error message if any
-    basic_data, error_message = valorant_api.get_basic_account_details(name, tag)
+    basic_data = valorant_api.get_basic_account_details(name, tag)
 
-    # Checks if nothing was returned from the API
+    if 'error' in basic_data:
+        print(f"Error: {basic_data['error']}")
+        return basic_data
+    
+    # Process the JSON data if the request was successful
+    try:
+        # Assume the API returns a dictionary with a 'results' key
+        results = data.get('results', [])
+        if not results:
+            print("No data available.")
+            return
+
+        # Process each result (example)
+        for item in results:
+            print(f"Item: {item['name']}, Value: {item['value']}")
+
+    except KeyError as e:
+        print(f"Data format error: missing key {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred while processing data: {e}")
+
+    '''# Checks if nothing was returned from the API
     if basic_data != None:
         # Makes request to API with PUUID to get detailed player data
-        detailed_data, error_message = valorant_api.get_detailed_account_details(basic_data['data']['region'], basic_data['data']['puuid'])
+        detailed_data = valorant_api.get_detailed_account_details(basic_data['data']['region'], basic_data['data']['puuid'])
         
         # Checks if nothing was returned from the API
         if detailed_data != None:
@@ -43,15 +64,24 @@ def get_player_info(name: str, tag: str) -> dict:
                 'all_time_ranked_wins': total_wins,
                 'all_time_ranked_games': total_games,
                 'all_time_ranked_loses': total_games - total_wins,
-                'all_time_winrate': (total_wins // total_games) * 100,
+                'all_time_winrate': int((total_wins / total_games) * 100),
                 'peak_rank': detailed_data['data']['highest_rank']['patched_tier'],
                 'peak_rank_tier': detailed_data['data']['highest_rank']['tier'],
             }
             return player_data
     else:
         print('Error:', error_message)
-    
-# This is a comment
-data = get_player_info('BESTVALORANTNERD', 'SHELL')
+        return {
+            'error': error_message
+        }
+'''
+# TESTING VARIABLES
+# Username: SEN TenZ
+# Tagline: 81619
 
-print(data['current_rank_icons']['small'])
+# Username: BESTVALORANTNERD
+# Tagline SHELL
+
+data = get_player_info('SEN TenZ', 'uhsaduashd')
+
+print(data)

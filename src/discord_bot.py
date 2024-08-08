@@ -28,15 +28,15 @@ async def on_ready():
         print(e)
 
 # Get player info command
-@bot.tree.command(name='embed')
+@bot.tree.command(name='playerinfo')
 @app_commands.describe(username = 'Player username?') # Prompt to ask for player username
 @app_commands.describe(tagline = 'Player tagline?') # Prompt to ask for player tagline
-async def embed(interaction: discord.Interaction, username : str, tagline : str):
+async def playerinfo(interaction: discord.Interaction, username : str, tagline : str):
     # Check to see if user included hashtag, and parses it from the tagline
     if tagline[0] == '#':
         tagline = tagline[1:]
     
-    player_data = get_player_info(username.lower(), tagline.lower())
+    player_data = get_player_info(username, tagline)
 
     # Creates the discord embed
     embed = discord.Embed(
